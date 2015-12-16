@@ -1,0 +1,8 @@
+{% capture fixed_excerpt %}{{ post.excerpt | remove: '<p>' | remove: '</p>' | strip | split: '.' | join: '.' }}&hellip;{% endcapture %}
+<div class="excerpt-box">
+  {% include post-header.html %}
+  <p class="excerpt">
+    {{ fixed_excerpt }}
+    <a href="{{ post.url }}" class="readmore">Read more</a>
+  </p>
+</div>

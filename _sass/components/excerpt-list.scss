@@ -1,0 +1,10 @@
+.excerpt-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  > .excerpt-box {
+    margin: 10px;
+    flex: 1 auto;
+  }
+}
+

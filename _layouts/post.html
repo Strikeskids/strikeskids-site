@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% assign author = site.data.authors[page.author] %}
+{% assign reading_time = content | number_of_words | plus: 190 | divided_by: 200 %}
+<div class="post-container">
+  {% assign post = page %}
+  {% include post-header.html %}
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <div class="post-footer">
+
+  </div>
+</div>

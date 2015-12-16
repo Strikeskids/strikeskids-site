@@ -1,0 +1,20 @@
+.excerpt-box {
+  @extend .post-container;
+
+  > .post-header > .title {
+    font-size: 1.5em;
+  }
+
+  > .excerpt {
+    @extend .post-body;
+
+    margin: 0;
+  }
+
+  > .excerpt > .readmore {
+    text-decoration: none;
+    color: #999999;
+
+    font-size: 0.8em;
+  }
+}
