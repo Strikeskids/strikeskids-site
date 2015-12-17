@@ -1,0 +1,25 @@
+.main-header > .topbar-navigation {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.topbar-navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+
+  > .button {
+    padding: 6px;
+    margin: 3px;
+    flex: 0 auto;
+
+    background: rgba(250, 250, 250, 0.6);
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  > .separator {
+    flex: 10 10 0;
+  }
+}

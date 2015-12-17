@@ -13,11 +13,31 @@ html {
 body {
   font-size: 1em;
   margin: 0;
+
+  background: url("../resources/hex-tile.svg") repeat #F1F8E9;
+  background-blend-mode: multiply;
+}
+
+.center-box {
+  max-width: 40em;
+  margin: 0 auto;
 }
 
 .main-content {
-  max-width: 40em;
-  margin: 0 auto;
+  @extend .center-box;
+}
+
+.main-header {
+  @extend .center-box;
+}
+
+.main-footer {
+  margin-top: 20px;
+
+  > .copy {
+    font-size: 0.5em;
+    margin: 5px;
+  }
 }
 
 p {
