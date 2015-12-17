@@ -11,6 +11,9 @@ github_username:  Strikeskids
 
 permalink: /blog/v3/:year/:month/:day/:title
 
+exclude:
+  - conf
+
 defaults:
   -
     scope:
