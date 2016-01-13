@@ -26,5 +26,8 @@ defaults:
 # Build settings
 markdown: kramdown
 
+kramdown:
+  auto_ids: true
+
 gems:
   - "octopress-autoprefixer"
