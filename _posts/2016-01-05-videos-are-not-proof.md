@@ -14,7 +14,7 @@ Instead of tackling the problem from the side of video editing, I'm going to wor
 
 A chrome extension is just a folder that contains a `manifest.json`:
 
-{% highlight json %}
+~~~ json
 {
     "manifest_version": 2,
     "name": "Website Modifier",
@@ -22,11 +22,11 @@ A chrome extension is just a folder that contains a `manifest.json`:
     "version": "0.1",
     "permissions": ["tabs"]
 }
-{% endhighlight %}
+~~~
 
 From what I could tell, the easiest way to change the content on the page is to inject some Javascript that will change it for me. This method of injection from a chrome extension is known as a content script. We can add the following lines to our `manifest.json` to load our own content script.
 
-{% highlight js %}
+~~~ js
 {
     ...
     "content_scripts": [
@@ -41,17 +41,18 @@ From what I could tell, the easiest way to change the content on the page is to 
     ]
     ...
 }
-{% endhighlight %}
+~~~
 
 Now, `powerbot.js` from the root folder of the extension will be injected directly into the page like it was loaded in a `<script>` tag.
 
 I've chosen to inject into the notifications widget.
 
+{: .image-figure}
 ![notifications widget screenshot]({{ site.baseurl }}/resources/Screen Shot 2016-01-05 at 3.40.55 PM.png)
 
 From DevTools, we can copy and modify the notification row. Now, that just needs to be appended into the parent container.
 
-{% highlight html %}
+~~~ html
 <li class=" ipsType_small clearfix">
     <img src="//powerbot-dequeue.netdna-ssl.com/community/uploads/profile/photo-thumb-259372.png?_r=0" 
         alt="Strikeskids's Photo"
@@ -61,21 +62,21 @@ From DevTools, we can copy and modify the notification row. Now, that just needs
         <span class="ipsType_smaller desc lighter">Tomorrow</span>
     </div>
 </li>
-{% endhighlight %}
+~~~
 
 A first try is to find our container `#user_notifications_link_menucontent > ul` and then append this content.
 
-{% highlight js %}
+~~~ js
 var container =
     document.querySelector('#user_notifications_link_menucontent > ul')
 container.innerHTML += modifiedRow
-{% endhighlight %}
+~~~
 
 We can add this script into Chrome by opening up `chrome://extensions`. Click `Load Unpacked Extension` and select the extension folder. This will load the extension and enable it immediately.
 
 Unfortunately, this script does nothing. In DevTools, content script errors are helpfully displayed. This tells us that the container isn't created until the notifications button is clicked. As an extra challenge, its content is loaded dynamically. We need to listen for the click on the notifications button, and THEN wait for children to be added to the wrapping container.
 
-{% highlight js %}
+~~~ js
 var button = document.querySelector('#notify_link')
 
 button.addEventListener('click', function evt() {
@@ -94,7 +95,7 @@ button.addEventListener('click', function evt() {
         observer.disconnect()
     }
 })
-{% endhighlight %}
+~~~
 
 We remove the listener and observer once they fire to avoid having our extra notification added multiple times.
 
