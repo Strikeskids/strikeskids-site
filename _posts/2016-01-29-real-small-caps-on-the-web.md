@@ -10,6 +10,10 @@ I was previously under the impression that the correct way to use small-caps on 
 font-variant: small-caps;
 ~~~
 
+<span style="font-variant: small-caps; font-family: Calibri;">
+but that produces very FAKE small caps.
+</span>
+
 Looking at one of my previous pages, I discovered that an offending tag was using the fake small-caps. Reading up more on the issue did not give any enlightening solutions. I needed to enable "smcp" on the font, but no method of doing this was described.
 
 Luckily, [Wikipedia](https://en.wikipedia.org/wiki/Small_caps) had the solution. To correctly enable small caps, you should use
@@ -23,6 +27,10 @@ or, if you actually want your site to work on non-Firefox browsers
 ~~~ css3
 font-feature-settings: 'smcp';
 ~~~
+
+<span style="font-feature-settings: 'smcp'; font-family: Calibri;">
+and this produces REAL small caps.
+</span> Unfortunately, I had to use a different font for the examples, because my main font does not support small caps.
 
 I find it interesting that none of the sites extolling the benefits of true small caps ever gave a solution for the web.
 
