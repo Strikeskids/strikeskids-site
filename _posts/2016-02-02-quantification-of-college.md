@@ -2,7 +2,7 @@
 title: The Quantification of College
 ---
 
-I recently read an [article][college-return-on-investment] from the Wall Street Journal. According to their research, for non-STEM fields the prestige of the institution mattered significantly for starting and mid-career salaries. For STEM fields, the prestige did not have so much of an effect on the resulting salaries for graduates. 
+I recently read an [article][college-return-on-investment] from the Wall Street Journal. According to their research, for non-STEM fields the prestige of the institution mattered significantly for starting and mid-career salaries. For STEM fields, the prestige did not have so much of an effect on the resulting salaries for graduates.
 
 The authors propose one theory that this difference occurs because of the logical, progressive nature of STEM fields as opposed to non-STEM fields. For STEM fields, there is a fixed body of knowledge that has been standardized for every graduate in one of those fields. Whether you go to a prestigious institution or a non-prestigious one, you will get roughly the same skills in the basic, required areas.
 
