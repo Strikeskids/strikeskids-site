@@ -26,5 +26,5 @@ markdown: kramdown
 kramdown:
   auto_ids: true
 
-gems:
+plugins:
   - "octopress-autoprefixer"
